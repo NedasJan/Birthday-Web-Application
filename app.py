@@ -36,5 +36,3 @@ def index():
         people = cursor.fetchall()
 
         return render_template("index.html", people = people)
-
-
