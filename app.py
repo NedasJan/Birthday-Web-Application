@@ -1,12 +1,13 @@
 import sqlite3
-from flask import Flask, redirect, render_template, request, session
+
+from flask import Flask, redirect, render_template, request
 
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
-connection = sqlite3.connect("birthdays.db", check_same_thread=False)
+connection = sqlite3.connect("birthdays.db", check_same_thread = False)
 cursor = connection.cursor()
 
 
@@ -25,14 +26,15 @@ def index():
         month = request.form.get("monthInput")
         day = request.form.get("dayInput")
 
-        cursor.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", (name, month, day))
+        cursor.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", (name, month, day,))
         connection.commit()
 
         return redirect("/")
 
     else:
-        people = cursor.execute("SELECT name, month, day FROM birthdays ORDER BY id DESC").fetchall()
+        cursor.execute("SELECT name, month, day FROM birthdays ORDER BY id DESC")
+        people = cursor.fetchall()
 
-        return render_template("index.html", people=people)
+        return render_template("index.html", people = people)
 
 
