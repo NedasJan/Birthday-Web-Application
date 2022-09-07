@@ -1,5 +1,5 @@
 # Birthday-Web-App
-A simple web app, that lets you store birthdays.
+A web application, that lets you store birthdays.
 
 --------------------------------------------------------------------------------
 
