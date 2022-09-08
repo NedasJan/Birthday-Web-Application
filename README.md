@@ -1,4 +1,4 @@
-# Birthday-Web-App
+# Birthday-Web-Application
 Web application, that lets you store birthdays.
 
 --------------------------------------------------------------------------------
